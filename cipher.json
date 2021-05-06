@@ -1,0 +1,25 @@
+{
+    "ciphers" :
+    [
+        {
+            "cipher" : "morse",
+            "website" : "./html/morse.html",
+            "script" : "./script/morse.js"
+        },
+        {
+            "cipher" : "caesar",
+            "website" : "./html/caesar.html",
+            "script" : "./script/ceasar.js"
+        },
+        {
+            "cipher" : "five-letter",
+            "website" : "./html/five-letter.html",
+            "script" : "./script/five-letter.js"
+        },
+        {
+            "cipher" : "pigpen",
+            "website" : "./html/pigpen.html",
+            "script" : "./script/pigpen.js"
+        }
+    ]
+}
