@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/box.css">
+    <script src="../scripts/LocalSave.js"></script>
     <script src="../scripts/Morse.js"></script>
 </head>
 <body>
@@ -60,11 +61,14 @@
                 <h3>Enchipher</h3>
                 <p>Input Text</p>
                 <input type = "text" id = "morseEncoderInput" class = "textInput" oninput = "encode()">
-                <p>Replace Dot / .</p>
+                <br>
+                <label for="replaceDot">Replace Dot / . </label>
                 <input type = "text" id = "replaceDot" oninput="encode()">
-                <p>Replace Dash / -</p>
+                <br>
+                <label for="replaceDash">Replace Dash / -</label>
                 <input type = "text" id = "replaceDash" oninput="encode()">
-                <p>Replace Space</p>
+                <br>
+                <label for="replaceSpace">Replace Space</label>
                 <input type = "text" id = "replaceSpace" oninput="encode()">
                 <p>Output</p>
                 <div class="output" id="morseEncoderOutput"></div>

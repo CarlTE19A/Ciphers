@@ -30,7 +30,7 @@
 {
     color: var(--grey);
 }
-.box p
+.box p, .box label
 {
     color: var(--grey);
     margin-bottom: 3px;
@@ -58,5 +58,5 @@
 {
     display: inline-block;
     border: solid 1px var(--grey);
-    width: 40vw;
+    width: 80%;
 }
