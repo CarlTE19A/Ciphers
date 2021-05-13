@@ -66,7 +66,7 @@ var alphabet =
     
 ];
 
-function encode()
+function morseEncode()
 {
     var message = document.getElementById('morseEncoderInput').value;
     message = message.toLowerCase();
@@ -84,17 +84,36 @@ function encode()
     }
     if(space == "")
     {
-        space = "<br/>";
+        space = "\r\n";
+    }
+    if(dot == dash || dot == space || dash == space)
+    {
+        document.getElementById('morseWarning').style.display = "block";
+        document.getElementById('morseWarning').innerHTML = "This will be imposible to solve";
+    }
+    else if(dot.includes(dash) || dot.includes(space) ||
+        dash.includes(dot) || dash.includes(space) ||
+        space.includes(dot) || space.includes(dash))
+    {
+        document.getElementById('morseWarning').style.display = "block";
+        document.getElementById('morseWarning').innerHTML = "This may be imposible to solve";
+    }
+    else
+    {
+        document.getElementById('morseWarning').style.display = "none"; 
     }
 
     var morseMessage = "";
     for (let i = 0; i < message.length; i++) 
     {
-        alphabet.forEach(letr => {
+        alphabet.every(letr => {    //Test every letter until correct one found
             if(message[i] == letr.letter)
             {
                 morseMessage += (letr.morse + " ");
+                return false;
             }
+            return true;
+            //Give warning if letter wasent founda
         });
     }
 
@@ -120,5 +139,26 @@ function encode()
     }
 
     morseMessage = newMessage;
-    document.getElementById('morseEncoderOutput').innerHTML = morseMessage;
+    outputArea = document.getElementById('morseEncoderOutput');
+    outputArea.innerHTML = morseMessage;
+    outputArea.style.height = calcHeight(outputArea.value) + "px";
 }
+
+function morseDecode()
+{
+    var message = document.getElementById('morseDecoderInput');
+}
+
+function morseCopy(copyArea) 
+{
+    var copyText = document.getElementById(copyArea);
+    copyText.focus();
+    copyText.select();
+    document.execCommand("copy");
+}
+
+function calcHeight(value) {    //Not mine like wut
+    let numberOfLineBreaks = (value.match(/\n/g) || []).length;
+    let newHeight = 4 + numberOfLineBreaks * 18 + 12 + 2;
+    return newHeight;
+  }
