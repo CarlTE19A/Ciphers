@@ -8,7 +8,6 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/box.css">
-    <script src="../scripts/LocalSave.js"></script>
     <script src="../scripts/Morse.js"></script>
 </head>
 <body>
@@ -33,9 +32,9 @@
                         Morse
                     </li>
                 </a>
-                <a href="#">
+                <a href="./ceasar.html">
                     <li>
-                        LINK
+                        Ceasar
                     </li>
                 </a>
                 <a href="#">
@@ -80,14 +79,18 @@
             </div>
 
             <div class = "box">
+                <h1>CURRENTLY NOT WORKING</h1>
                 <h3>Dechipher</h3>
-                <p>Input morse code</p>
+                <p>Input Morse code</p>
                 <input type = "text" id = "morseDecoderInput" class = "textInput" oninput = "morseDecode()">
-                <p>Replace Dot / .</p>
+                <br>
+                <label for="dotReplaced">Replace Dot / . </label>
                 <input type = "text" id = "dotReplaced" oninput="morseDecode()">
-                <p>Replace Dash / -</p>
+                <br>
+                <label for="dashReplaced">Replace Dash / -</label>
                 <input type = "text" id = "dashReplaced" oninput="morseDecode()">
-                <p>Replace Space</p>
+                <br>
+                <label for="spaceReplaced">Replace Space</label>
                 <input type = "text" id = "spaceReplaced" oninput="morseDecode()">
                 <p>Output</p>
                 <div class = "outputBox">
