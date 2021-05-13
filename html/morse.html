@@ -18,6 +18,7 @@
             The Site of Ciphers
         </a>
         </h1>
+        <h2>Morse</h2>
     </header>
     <label class = "nav-area">
         <h1 id="navSymbol">☰</h1>
@@ -60,22 +61,39 @@
             <div class = "box">
                 <h3>Enchipher</h3>
                 <p>Input Text</p>
-                <input type = "text" id = "morseEncoderInput" class = "textInput" oninput = "encode()">
+                <input type = "text" id = "morseEncoderInput" class = "textInput" oninput = "morseEncode()">
                 <br>
                 <label for="replaceDot">Replace Dot / . </label>
-                <input type = "text" id = "replaceDot" oninput="encode()">
+                <input type = "text" id = "replaceDot" oninput="morseEncode()">
                 <br>
                 <label for="replaceDash">Replace Dash / -</label>
-                <input type = "text" id = "replaceDash" oninput="encode()">
+                <input type = "text" id = "replaceDash" oninput="morseEncode()">
                 <br>
                 <label for="replaceSpace">Replace Space</label>
-                <input type = "text" id = "replaceSpace" oninput="encode()">
+                <input type = "text" id = "replaceSpace" oninput="morseEncode()">
                 <p>Output</p>
-                <div class="output" id="morseEncoderOutput"></div>
+                <div class = "outputBox">
+                    <textarea class = "output" id = "morseEncoderOutput" readonly></textarea>
+                    <button onclick = "morseCopy('morseEncoderOutput')" class = "outputCopy">Copy Output</button>
+                </div>
+                <div class = "warning" id = "morseWarning"></div>
             </div>
 
             <div class = "box">
                 <h3>Dechipher</h3>
+                <p>Input morse code</p>
+                <input type = "text" id = "morseDecoderInput" class = "textInput" oninput = "morseDecode()">
+                <p>Replace Dot / .</p>
+                <input type = "text" id = "dotReplaced" oninput="morseDecode()">
+                <p>Replace Dash / -</p>
+                <input type = "text" id = "dashReplaced" oninput="morseDecode()">
+                <p>Replace Space</p>
+                <input type = "text" id = "spaceReplaced" oninput="morseDecode()">
+                <p>Output</p>
+                <div class = "outputBox">
+                    <textarea class = "output" id = "morseDecoderOutput" readonly></textarea>
+                    <button onclick = "morseCopy('morseDecoderOutput')" class = "outputCopy">Copy Output</button>
+                </div>
             </div>
         </div>
     </main>

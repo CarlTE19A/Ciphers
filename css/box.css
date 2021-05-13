@@ -3,6 +3,8 @@
     --dark: rgb(255, 212, 152);
     --grey: rgb(66, 66, 66);
     --menu-hover: rgb(185, 141, 73);
+    --warning-border: rgb(165, 65, 65);
+    --warning: rgb(253, 148, 148);
 }
 
 .boxParent
@@ -46,13 +48,37 @@
     color: var(--menu-hover);
 }
 
+.outputBox
+{
+    display: flex;
+}
 .output
 {
-   background-color: var(--light);
-   border: solid;
-   border-width: 2px;
-   border-color: var(--grey);
-   min-height: 18px;
+    background-color: var(--light);
+    border: solid;
+    border-width: 2px;
+    border-color: var(--grey);
+    border-radius: 3px;
+    height: 18px;
+    min-width: 85%;
+   resize: vertical;
+   font-size: 14px;
+}
+.outputCopy
+{
+    width: 20%;
+}
+
+.warning
+{
+    margin-top: 3px;
+    background-color: var(--warning);
+    border: solid;
+    border-width: 2px;
+    border-color: var(--warning-border);
+    border-radius: 3px;
+    min-height: 18px;
+    display: none;
 }
 .textInput
 {
